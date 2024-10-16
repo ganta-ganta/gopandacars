@@ -35,10 +35,10 @@
 
 .dark-background {
   --background-color: #1f1f24;
-  --default-color: #ffffff;
-  --heading-color: #ffffff;
+  --default-color: #5cc3d5;
+  --heading-color: #5cc3d5;
   --surface-color: #37373f;
-  --contrast-color: #ffffff;
+  --contrast-color: #5cc3d5;
 }
 
 /* Smooth scroll */
@@ -207,6 +207,7 @@ h6 {
   }
 }
 
+
 /*--------------------------------------------------------------
 # Global Header
 --------------------------------------------------------------*/
@@ -247,7 +248,7 @@ h6 {
   font-size: 14px;
   padding: 8px 26px;
   margin: 0;
-  border-radius: 50px;
+  border-radius: 20px;
   transition: 0.3s;
 }
 
@@ -297,14 +298,15 @@ h6 {
   }
   .navmenu a .navicon,
   .navmenu a:focus .navicon {
-    font-size: 20px;
-    margin-right: 10px;
+    font-size: 25px;
+    margin-right: 20px;
   }
   
   .navmenu a:hover .navicon,
   .navmenu .active .navicon,
   .navmenu .active:focus .navicon {
     color: var(--accent-color);
+    
   }
 
   .navmenu ul {
@@ -362,7 +364,7 @@ h6 {
   .navmenu a:focus i {
     font-size: 12px;
     line-height: 0;
-    margin-left: 5px;
+    margin-left: 10px;
     transition: 0.3s;
   }
 
@@ -389,6 +391,7 @@ h6 {
     visibility: visible;
     width: 100%;
   }
+  
 
   .navmenu li:hover>a,
   .navmenu .active,
@@ -445,6 +448,11 @@ h6 {
     visibility: hidden;
   }
 
+
+ 
+
+
+
   .navmenu .dropdown .dropdown:hover>ul {
     opacity: 1;
     top: 0;
@@ -452,6 +460,7 @@ h6 {
     visibility: visible;
   }
 }
+
 
 /* Mobile Navigation */
 @media (max-width: 1199px) {
@@ -490,7 +499,7 @@ h6 {
   .navmenu a,
 .navmenu a:focus {
   color: var(--nav-color);
-  padding: 15px 10px;
+  padding: 20px 15px;
   font-family: var(--nav-font);
   font-size: 16px;
   font-weight: 400;
@@ -507,8 +516,8 @@ h6 {
     font-size: 12px;
     line-height: 0;
     margin-left: 5px;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -580,6 +589,8 @@ h6 {
 
   .mobile-nav-active {
     overflow: hidden;
+    background-color: var(--accent-color);
+    color: var(--contrast-color);
   }
 
   .mobile-nav-active .mobile-nav-toggle {
@@ -938,7 +949,7 @@ section,
   color: var(--contrast-color);
   background: var(--accent-color);
   font-weight: 300;
-  font-size: 150px;
+  font-size: 20px;
   letter-spacing: 1px;
   display: inline-block;
   padding: 10px 28px 12px 28px;

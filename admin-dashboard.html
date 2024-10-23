@@ -259,6 +259,16 @@
       const isAvailable = element.checked;
       localStorage.setItem(`${carName}Available`, isAvailable);
       alert(`${carName} is now ${isAvailable ? "enabled" : "disabled"}.`);
+      
+    }
+        // Function to enable or disable all switches
+    function toggleAll(enable) {
+      const switches = document.querySelectorAll('.form-check-input');
+      switches.forEach(switchElement => {
+        switchElement.checked = enable;
+        const carName = switchElement.id.replace('Switch', '');
+        toggleCarAvailability(carName, switchElement);
+      });
     }
   </script>
 

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel - Manage Car Availability</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container mt-5">
+    <h1>Admin Panel - Manage Car Availability</h1>
+
+    <!-- Car List with Bootstrap Cards and Switches -->
+    <div class="row">
+      <!-- Swift Card -->
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Swift</h5>
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="swiftSwitch" onchange="toggleCarAvailability('Swift', this)">
+              <label class="form-check-label" for="swiftSwitch">Available</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Etios Card -->
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Etios</h5>
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="etiosSwitch" onchange="toggleCarAvailability('Etios', this)">
+              <label class="form-check-label" for="etiosSwitch">Available</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- I10 Nios Card -->
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">I10 Nios</h5>
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="i10NiosSwitch" onchange="toggleCarAvailability('I10 Nios', this)">
+              <label class="form-check-label" for="i10NiosSwitch">Available</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Swift Dzire Card -->
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Swift Dzire</h5>
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="swiftDzireSwitch" onchange="toggleCarAvailability('Swift Dzire', this)">
+              <label class="form-check-label" for="swiftDzireSwitch">Available</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hyundai Aura Card -->
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Hyundai Aura</h5>
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="hyundaiAuraSwitch" onchange="toggleCarAvailability('Hyundai Aura', this)">
+              <label class="form-check-label" for="hyundaiAuraSwitch">Available</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tata Punch Card -->
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Tata Punch</h5>
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="tataPunchSwitch" onchange="toggleCarAvailability('Tata Punch', this)">
+              <label class="form-check-label" for="tataPunchSwitch">Available</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hyundai i20 Card -->
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Hyundai i20</h5>
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="hyundaii20Switch" onchange="toggleCarAvailability('Hyundai i20', this)">
+              <label class="form-check-label" for="hyundaii20Switch">Available</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Renault Kiger Card -->
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Renault Kiger</h5>
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="renaultKigerSwitch" onchange="toggleCarAvailability('Renault Kiger', this)">
+              <label class="form-check-label" for="renaultKigerSwitch">Available</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Urban Cruiser Card -->
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Urban Cruiser</h5>
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="urbanCruiserSwitch" onchange="toggleCarAvailability('Urban Cruiser', this)">
+              <label class="form-check-label" for="urbanCruiserSwitch">Available</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Brezza Card -->
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Brezza</h5>
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="brezzaSwitch" onchange="toggleCarAvailability('Brezza', this)">
+              <label class="form-check-label" for="brezzaSwitch">Available</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Nexa Fronx Card -->
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Nexa Fronx</h5>
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="nexaFronxSwitch" onchange="toggleCarAvailability('Nexa Fronx', this)">
+              <label class="form-check-label" for="nexaFronxSwitch">Available</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hyundai Creta Card -->
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Hyundai Creta</h5>
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="hyundaiCretaSwitch" onchange="toggleCarAvailability('Hyundai Creta', this)">
+              <label class="form-check-label" for="hyundaiCretaSwitch">Available</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Grand Vitara Card -->
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Grand Vitara</h5>
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="grandVitaraSwitch" onchange="toggleCarAvailability('Grand Vitara', this)">
+              <label class="form-check-label" for="grandVitaraSwitch">Available</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ertiga Card -->
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Ertiga</h5>
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="ertigaSwitch" onchange="toggleCarAvailability('Ertiga', this)">
+              <label class="form-check-label" for="ertigaSwitch">Available</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bolero Neo Card -->
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Bolero Neo</h5>
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="boleroNeoSwitch" onchange="toggleCarAvailability('Bolero Neo', this)">
+              <label class="form-check-label" for="boleroNeoSwitch">Available</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Nexa XL6 Card -->
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Nexa XL6</h5>
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="nexaXL6Switch" onchange="toggleCarAvailability('Nexa XL6', this)">
+              <label class="form-check-label" for="nexaXL6Switch">Available</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mahindra Thar Card -->
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Mahindra Thar</h5>
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="mahindraTharSwitch" onchange="toggleCarAvailability('Mahindra Thar', this)">
+              <label class="form-check-label" for="mahindraTharSwitch">Available</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Innova Crysta Card -->
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Innova Crysta</h5>
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="innovaCrystaSwitch" onchange="toggleCarAvailability('Innova Crysta', this)">
+              <label class="form-check-label" for="innovaCrystaSwitch">Available</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleCarAvailability(carName, element) {
+      const isAvailable = element.checked;
+      localStorage.setItem(`${carName}Available`, isAvailable);
+      alert(`${carName} is now ${isAvailable ? "enabled" : "disabled"}.`);
+    }
+  </script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

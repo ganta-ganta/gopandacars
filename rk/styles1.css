@@ -61,25 +61,30 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 999; /* Ensure it's on top */
+  width: 100%; /* Make the image cover the entire container */
+  height: auto;
   
 }
 
 .clr-modal-content {
-  width: 80%; /* Adjust width as needed */
-  max-width: 1010px;
+  width: 100%; /* Adjust width as needed */
+  max-width: 600px;
   background-color: #cfa900;
   border-radius: 18px;
   box-shadow: 0 20px 10px rgba(152, 159, 7, 0.253);
-  padding: 20px;
+  padding: 10px;
   overflow: hidden;
-  width: 350px;
-  height: 600px;
+  width: 80%; /* Make the image cover the entire container */
+  height: auto;
+  
 }
 
 .clr-modal-body {
   text-align: center;
   padding: 10px;
-  width: 322px;
+  
+  width: 100%; /* Make the image cover the entire container */
+  height: auto;
   
 }
 

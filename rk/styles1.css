@@ -60,26 +60,31 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 9999; /* Ensure it's on top */
+  z-index: 999; /* Ensure it's on top */
+  
 }
 
 .clr-modal-content {
-  width: 50%; /* Adjust width as needed */
-  max-width: 600px;
+  width: 80%; /* Adjust width as needed */
+  max-width: 1010px;
   background-color: #cfa900;
   border-radius: 18px;
-  box-shadow: 0 2px 10px rgba(129, 3, 3, 0.5);
+  box-shadow: 0 20px 10px rgba(152, 159, 7, 0.253);
   padding: 20px;
   overflow: hidden;
+  width: 350px;
+  height: 600px;
 }
 
 .clr-modal-body {
   text-align: center;
-  padding: 20px;
+  padding: 10px;
+  width: 322px;
+  
 }
 
 .clr-modal-footer {
   display: flex;
   justify-content: center;
-  padding: 10px;
+  padding: 1px;
 }

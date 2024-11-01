@@ -118,12 +118,12 @@ s0.parentNode.insertBefore(s1,s0);
     <div class="clr-modal-dialog clr-modal-content" role="document">
         <div class="clr-modal-body">
             <!-- Diwali image in the popup -->
-	    <p style="text-align: center; margin-top: 10px;"> (version)1.0</p>
+	    <p style="text-align: center; margin-top: 10px;"> (version)1.1</p>
             <img src="img/offer.jpg" alt="from devloper" style="width:100%; border-radius: 18px;">
             
 		
-            <h3 style="margin-top: 60px; text-align: center;">Advance Happy Diwali!</h3>
-            <p style="text-align: center; margin-top: 10px;">Wishing you a bright and prosperous  Diwali!</p>
+            <h3 style="margin-top: 60px; text-align: center;">GO Panda Self-Drive cars!</h3>
+            <p style="text-align: center; margin-top: 10px;">Drive Safe -!</p>
         </div>
         <div class="clr-modal-footer">
             <button type="button" class="btn btn-primary" onclick="closeBanner()">Close</button>
@@ -135,7 +135,7 @@ s0.parentNode.insertBefore(s1,s0);
         <div class="row gy-4 justify-content-center justify-content-lg-between">
           <div class="col-lg-5 order-2 order-lg-1 d-flex flex-column justify-content-center">
             <h1 data-aos="fade-up"> " Drive Freely -Unlimited Kilometers, ”<br>Unmatched Freedom </h1>
-            <p data-aos="fade-up" data-aos-delay="100">Go Panda Car Rental offers a convenient and flexible car rental service in Guntur, providing customers with the option of unlimited kilometers, making it ideal for long-distance travel without the worry of extra charges.
+            <p data-aos="fade-up" data-aos-delay="100">Go Panda Car Self-Drive Rental offers a convenient and flexible car rental service in Guntur, providing customers with the option of unlimited kilometers, making it ideal for long-distance travel without the worry of extra charges.
             </p>
             <div class="d-flex" data-aos="fade-up" data-aos-delay="100">
               <a href="booking1.html" class="btn-get-started">Rent Now</a>
@@ -174,13 +174,90 @@ s0.parentNode.insertBefore(s1,s0);
               <p class="fst-italic">
                 - Choose from a wide range of vehicles, including economy, luxury, SUVs, and vans, to cater to various travel needs.
               </p>
-              <ul>
-                <li><i class="bi bi-caret-right-fill"></i> <span>Business trips</span></li>
-                <li><i class="bi bi-caret-right-fill"></i> <span>Family vacations</span></li>
-                <li><i class="bi bi-caret-right-fill"></i> <span>City tours</span></li>
-                <li><i class="bi bi-caret-right-fill"></i> <span>Long-distance travel</span></li>
-                <li><i class="bi bi-caret-right-fill"></i> <span>Weakly Booking </span></li>
-              </ul>
+               <ul class="list-unstyled">
+    <li><i class="bi bi-caret-right-fill"></i> <span data-bs-toggle="modal" data-bs-target="#businessModal">Business trips</span></li>
+    <li><i class="bi bi-caret-right-fill"></i> <span data-bs-toggle="modal" data-bs-target="#familyModal">Family vacations</span></li>
+    <li><i class="bi bi-caret-right-fill"></i> <span data-bs-toggle="modal" data-bs-target="#cityModal">City tours</span></li>
+    <li><i class="bi bi-caret-right-fill"></i> <span data-bs-toggle="modal" data-bs-target="#longDistanceModal">Long-distance travel</span></li>
+    <li><i class="bi bi-caret-right-fill"></i> <span data-bs-toggle="modal" data-bs-target="#weeklyModal">Weekly Booking</span></li>
+  </ul>
+</div>
+
+<!-- Modals -->
+
+<!-- Business Trips Modal -->
+<div class="modal fade" id="businessModal" tabindex="-1" aria-labelledby="businessModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="businessModalLabel">Business Trips</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Our self-drive rental cars are perfect for business trips. Enjoy the convenience of traveling on your own schedule with professional options.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Family Vacations Modal -->
+<div class="modal fade" id="familyModal" tabindex="-1" aria-labelledby="familyModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="familyModalLabel">Family Vacations</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Make your family vacation more comfortable with our spacious self-drive rental cars, perfect for quality time on the road.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- City Tours Modal -->
+<div class="modal fade" id="cityModal" tabindex="-1" aria-labelledby="cityModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="cityModalLabel">City Tours</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Explore the city at your own pace with our reliable self-drive rental cars, ideal for sightseeing and discovering new places.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Long-Distance Travel Modal -->
+<div class="modal fade" id="longDistanceModal" tabindex="-1" aria-labelledby="longDistanceModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="longDistanceModalLabel">Long-Distance Travel</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Plan your long-distance trips with freedom and flexibility using our self-drive rental cars.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Weekly Booking Modal -->
+<div class="modal fade" id="weeklyModal" tabindex="-1" aria-labelledby="weeklyModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="weeklyModalLabel">Weekly Booking</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Take advantage of our best rates for weekly bookings, offering you flexibility and cost-effectiveness.
+      </div>
+    </div>
+  </div>
               <p>
                 Travel without distance restrictions! Explore freely without the worry of extra charges.
 

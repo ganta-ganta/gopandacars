@@ -1,0 +1,20 @@
+# robots.txt for gopandacars.in
+
+User-agent: *
+Disallow: /admin/
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /login/
+Disallow: /register/
+Disallow: /scripts/
+Disallow: /private/
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.gif$
+Allow: /*.svg$
+
+# Sitemap URL
+Sitemap: https://gopandacars.in/sitemap.xml

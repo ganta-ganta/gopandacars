@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Ganta Solutions</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for black and gold theme */
+        body {
+            background-color: #000000; /* Black background */
+            color: #FFD700; /* Gold text */
+        }
+
+        .btn-gold {
+            background-color: #FFD700;
+            color: #000;
+        }
+
+        .btn-gold:hover {
+            background-color: #FFC107;
+            color: #000;
+        }
+
+        .card {
+            background-color: #1a1a1a;
+            border: none;
+        }
+
+        .card-title {
+            color: #FFD700;
+        }
+
+        .card-text {
+            color: #d3d3d3;
+        }
+
+        .logo {
+            max-width: 200px;
+        }
+    </style>
+</head>
+
+<body class="d-flex flex-column align-items-center justify-content-center min-h-screen text-center">
+    <!-- Logo Section -->
+    <div class="mb-5">
+        <!-- Replace 'logo.png' with the path to your logo file -->
+        <img src="img/ganta.png" alt="Ganta Solutions Logo" class="logo mb-4">
+    </div>
+
+    <!-- Welcome Message -->
+    <div>
+        <h1 class="text-4xl font-bold mb-4">Welcome to GANTA Solutions</h1>
+        <p class="text-lg mb-5">We are redirecting you to <strong>Ganta Solutions</strong>, our main website.</p>
+        <a href="https://gantasolutions.com" class="btn btn-gold px-5 py-3 rounded">Visit Ganta Solutions</a>
+    </div>
+
+    <!-- Cards Section -->
+    <div class="container mt-5">
+        <div class="row g-4">
+            <!-- Card 1: Web Development -->
+            <div class="col-md-4">
+                <div class="card p-3">
+                    <h5 class="card-title">Web Development</h5>
+                    <p class="card-text">We build responsive and dynamic websites tailored to your business needs.</p>
+                </div>
+            </div>
+            <!-- Card 2: Digital Marketing -->
+            <div class="col-md-4">
+                <div class="card p-3">
+                    <h5 class="card-title">Digital Marketing</h5>
+                    <p class="card-text">Increase your online presence with our expert marketing strategies.</p>
+                </div>
+            </div>
+            <!-- Card 3: Business Analysis -->
+            <div class="col-md-4">
+                <div class="card p-3">
+                    <h5 class="card-title">Business Analysis</h5>
+                    <p class="card-text">Optimize your business with data-driven insights and analysis.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Auto Redirect after 5 seconds -->
+    <script>
+        setTimeout(() => {
+            window.location.href = "https://gantasolutions.com";
+        }, 5000); // Redirect after 5 seconds
+    </script>
+</body>
+
+</html>

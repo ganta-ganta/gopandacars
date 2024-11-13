@@ -172,6 +172,7 @@
       {name: 'Tata Altroz Sunroof', image: 'img/altroz-sunroof.jpg', price24hrs: 2500, price12hrs: 1600 },
       {name: 'XUV 300 Sunroof', image: 'img/xuv300-sunroof.jpg', price24hrs: 2800, price12hrs: 1800 },
       {name: 'Fortuner', image: 'img/fortuner.jpg', price24hrs: 12000, price12hrs: 8000, withDriver: true },
+      {name: 'Kia selto', image: 'img/kia-selto.jpg', price24hrs: 2800, price12hrs: 1800, withDriver: true },
     ];
 
     // Generate car booking cards dynamically
@@ -188,7 +189,7 @@
               <p class="card-text">12hrs - ₹${car.price12hrs}</p>
               <p class="card-text">24hrs - ₹${car.price24hrs}</p>
               <button id="${car.name.replace(/\s+/g, '')}12hrs" class="btn btn-primary mb-2" onclick="bookCar('${car.name}', 12, ${car.price12hrs})" ${!isCarAvailable ? 'disabled' : ''}>Book for 12hrs</button>
-              <button id="${car.name.replace(/\s+/g, '')}24hrs" class="btn btn-success mb-2" onclick="bookCar('${car.name}', 24, ${car.price24hrs})" ${!isCarAvailable ? 'disabled' : ''}>Book for 24hrs</button>
+              <button id="${car.name.replace(/\s+/g, '')}24hrs" class="btn btn-success mb-2" onclick="bookCar('${car.name}', 24, ${car.price24hrs})" ${!isCarAvailable ? 'disabled' : ''}>Book for 24hrs(unlimited kilometers</button>
             </div>
           </div>
         </div>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Booking with YouTube and Features</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        .card {
+            margin-top: 20px;
+        }
+
+        .whatsapp-link {
+            background-color: #25D366;
+            color: white;
+        }
+
+        .car-icon {
+            font-size: 24px;
+            color: #007bff;
+        }
+
+        .details {
+            display: none;
+        }
+
+        .badge-top-end {
+            background-color: #ffc107;
+            color: #000;
+            margin-left: 10px;
+        }
+
+        .youtube-link {
+            color: #ff0000;
+        }
+    </style>
+</head>
+
+<body><!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<div class="container mt-5">
+  <div class="row" id="carList"></div>
+</div>
+
+<!-- Modal Template -->
+<div class="modal fade" id="carDetailsModal" tabindex="-1" aria-labelledby="carDetailsModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="carDetailsModalLabel">Car Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="modalBodyContent"></div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// Car details array (name, image, prices, and features)
+const cars = [
+  { name: 'Swift', image: 'img/swift.jpg', price12hrs: 1200, price24hrs: 2000, sunroof: false, withDriver: false, description: 'A compact and fuel-efficient car.' },
+  { name: 'Hyundai Creta', image: 'img/creta.jpg', price12hrs: 2000, price24hrs: 3000, sunroof: true, withDriver: false, description: 'Spacious SUV with modern features and sunroof.' },
+  { name: 'Innova Crysta', image: 'img/innova.jpg', price12hrs: 3500, price24hrs: 5000, sunroof: true, withDriver: true, description: 'Perfect for family trips with a driver and luxury features.' },
+  { name: 'Mahindra Thar', image: 'img/thar.jpg', price12hrs: 3500, price24hrs: 5000, sunroof: true, withDriver: true, description: 'Off-road beast with a sunroof and driver option.' }
+];
+
+// Generate car booking cards dynamically
+const carListElement = document.getElementById('carList');
+
+cars.forEach((car, index) => {
+  carListElement.innerHTML += `
+    <div class="col-md-4">
+      <div class="card mb-4">
+        <img src="${car.image}" class="card-img-top" alt="${car.name}">
+        <div class="card-body">
+          <h5 class="card-title">${car.name}</h5>
+          <p>12hrs - ₹${car.price12hrs}</p>
+          <p>24hrs - ₹${car.price24hrs} (unlimited kilometers)</p>
+          ${car.sunroof ? '<p><i class="bi bi-sun"></i> Sunroof Available</p>' : ''}
+          ${car.withDriver ? '<p><i class="bi bi-person"></i> With Driver</p>' : ''}
+          <button class="btn btn-info mb-2" onclick="showCarDetails(${index})">View Details</button>
+          <button class="btn btn-success mb-2" onclick="bookCar('${car.name}', 12, ${car.price12hrs})">Book for 12hrs</button>
+          <button class="btn btn-primary mb-2" onclick="bookCar('${car.name}', 24, ${car.price24hrs})">Book for 24hrs</button>
+        </div>
+      </div>
+    </div>
+  `;
+});
+
+// Function to handle car booking via WhatsApp
+function bookCar(carName, hours, price) {
+  const message = `I want to book the ${carName} for ${hours}hrs at ₹${price}.`;
+  const whatsappLink = `https://wa.me/919052017979?text=${encodeURIComponent(message)}`;
+  window.open(whatsappLink, '_blank');
+}
+
+// Function to display car details in the modal
+function showCarDetails(index) {
+  const car = cars[index];
+  const modalBody = document.getElementById('modalBodyContent');
+  modalBody.innerHTML = `
+    <h5>${car.name}</h5>
+    <img src="${car.image}" class="img-fluid mb-3" alt="${car.name}">
+    <p><strong>12hrs Price:</strong> ₹${car.price12hrs}</p>
+    <p><strong>24hrs Price:</strong> ₹${car.price24hrs}</p>
+    <p>${car.description}</p>
+    ${car.sunroof ? '<p><i class="bi bi-sun"></i> Sunroof Available</p>' : ''}
+    ${car.withDriver ? '<p><i class="bi bi-person"></i> With Driver</p>' : ''}
+  `;
+  new bootstrap.Modal(document.getElementById('carDetailsModal')).show();
+}
+</script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

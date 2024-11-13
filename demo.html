@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Booking with YouTube and Features</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        .card {
+            margin-top: 20px;
+        }
+
+        .whatsapp-link {
+            background-color: #25D366;
+            color: white;
+        }
+
+        .car-icon {
+            font-size: 24px;
+            color: #007bff;
+        }
+
+        .details {
+            display: none;
+        }
+
+        .badge-top-end {
+            background-color: #ffc107;
+            color: #000;
+            margin-left: 10px;
+        }
+
+        .youtube-link {
+            color: #ff0000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2 class="text-center my-4">Car Booking with YouTube and Details</h2>
+        <div class="row" id="carList"></div>
+    </div>
+
+    <script>
+        // Car data with details, features, and YouTube links
+        const cars = [
+            {
+                name: 'Hyundai i20',
+                features: [
+                    { icon: 'bi-gear', text: 'Manual Transmission' },
+                    { icon: 'bi-fuel-pump', text: 'Petrol' },
+                    { icon: 'bi-people', text: '5-Seater' },
+                    { icon: 'bi-wind', text: 'Air Conditioning' }
+                ],
+                price24hrs: 2500,
+                price12hrs: 1500,
+                icon: 'fa-car',
+                youtube: 'https://www.youtube.com/watch?v=abcdefghij'
+            },
+            {
+                name: 'Kia Seltos (Sunroof)',
+                features: [
+                    { icon: 'bi-gear-wide-connected', text: 'Automatic Transmission' },
+                    { icon: 'bi-fuel-pump-diesel', text: 'Diesel' },
+                    { icon: 'bi-people-fill', text: '5-Seater' },
+                    { icon: 'bi-brightness-high', text: 'Sunroof' },
+                    { icon: 'bi-wind', text: 'Air Conditioning' }
+                ],
+                price24hrs: 2800,
+                price12hrs: 1800,
+                icon: 'fa-car-side',
+                topEnd: true,
+                youtube: 'https://www.youtube.com/watch?v=klmnopqrst'
+            }
+        ];
+
+        // Generate WhatsApp booking link
+        function getWhatsAppLink(carName, hours, price) {
+            const phoneNumber = '918888888888'; // Replace with your phone number
+            const message = `Hi, I would like to book ${carName} for ${hours}. Total price: ₹${price}`;
+            return `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+        }
+
+        // Function to toggle car details
+        function toggleDetails(id) {
+            const detailsElement = document.getElementById(id);
+            detailsElement.style.display = detailsElement.style.display === 'none' ? 'block' : 'none';
+        }
+
+        // Dynamically generate car cards with details
+        const carList = document.getElementById('carList');
+        cars.forEach((car, index) => {
+            const topEndBadge = car.topEnd ? `<span class="badge badge-top-end">Top-End</span>` : '';
+            const carCard = `
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">
+                                <i class="fa ${car.icon} car-icon"></i> ${car.name} ${topEndBadge}
+                            </h5>
+                            <p>24 hours: ₹${car.price24hrs}</p>
+                            <p>12 hours: ₹${car.price12hrs}</p>
+                            <button class="btn btn-primary mb-3" onclick="toggleDetails('details${index}')">View Details</button>
+                            <div id="details${index}" class="details">
+                                <ul class="list-group list-group-flush">
+                                    ${car.features.map(feature => `
+                                        <li class="list-group-item">
+                                            <i class="bi ${feature.icon}"></i> ${feature.text}
+                                        </li>`).join('')}
+                                </ul>
+                                <a href="${car.youtube}" target="_blank" class="btn youtube-link mt-3">
+                                    <i class="bi bi-youtube"></i> Watch on YouTube
+                                </a>
+                            </div>
+                            <a href="${getWhatsAppLink(car.name, '24 hours', car.price24hrs)}" target="_blank" class="btn whatsapp-link mb-2">
+                                <i class="fab fa-whatsapp"></i> Book for 24 Hours
+                            </a>
+                            <a href="${getWhatsAppLink(car.name, '12 hours', car.price12hrs)}" target="_blank" class="btn whatsapp-link">
+                                <i class="fab fa-whatsapp"></i> Book for 12 Hours
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            `;
+            carList.innerHTML += carCard;
+        });
+    </script>
+</body>
+
+</html>

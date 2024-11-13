@@ -118,109 +118,6 @@
   </a>
 </div>
 
-<!-- Tata Altroz Sunroof -->
-<div class="col-md-4">
-  <a href="tel:+919052017979">
-    <div class="card">
-      <img src="img/altroz-sunroof.jpg" class="card-img-top" alt="Tata Altroz Sunroof">
-      <div class="card-body">
-        <h5 class="card-title">Tata Altroz (Sunroof)</h5>
-        <p class="card-text">24hrs - ₹2500, 12hrs - ₹1500</p>
-      </div>
-    </div>
-  </a>
-</div>
-
-<!-- XUV 300 Sunroof -->
-<div class="col-md-4">
-  <a href="tel:+919052017979">
-    <div class="card">
-      <img src="img/xuv300-sunroof.jpg" class="card-img-top" alt="XUV 300 Sunroof">
-      <div class="card-body">
-        <h5 class="card-title">XUV 300 (Sunroof)</h5>
-        <p class="card-text">24hrs - ₹2800, 12hrs - ₹1800</p>
-      </div>
-    </div>
-  </a>
-</div>
-
-<!-- Tata Nexon -->
-<div class="col-md-4">
-  <a href="tel:+919052017979">
-    <div class="card">
-      <img src="img/nexon.jpg" class="card-img-top" alt="Tata Nexon">
-      <div class="card-body">
-        <h5 class="card-title">Tata Nexon</h5>
-        <p class="card-text">24hrs - ₹2800, 12hrs - ₹1700</p>
-      </div>
-    </div>
-  </a>
-</div>
-
-<!-- XUV 300 -->
-<div class="col-md-4">
-  <a href="tel:+919052017979">
-    <div class="card">
-      <img src="img/xuv300.jpg" class="card-img-top" alt="XUV 300">
-      <div class="card-body">
-        <h5 class="card-title">XUV 300</h5>
-        <p class="card-text">24hrs - ₹2800, 12hrs - ₹1800</p>
-      </div>
-    </div>
-  </a>
-</div>
-
-<!-- Venue -->
-<div class="col-md-4">
-  <a href="tel:+919052017979">
-    <div class="card">
-      <img src="img/venue.jpg" class="card-img-top" alt="Venue">
-      <div class="card-body">
-        <h5 class="card-title">Venue</h5>
-        <p class="card-text">24hrs - ₹2700, 12hrs - ₹1700</p>
-      </div>
-    </div>
-  </a>
-</div>
-
-<!-- Tata Altroz -->
-<div class="col-md-4">
-  <a href="tel:+919052017979">
-    <div class="card">
-      <img src="img/altroz.jpg" class="card-img-top" alt="Tata Altroz">
-      <div class="card-body">
-        <h5 class="card-title">Tata Altroz</h5>
-        <p class="card-text">24hrs - ₹2500, 12hrs - ₹1500</p>
-      </div>
-    </div>
-  </a>
-</div>
-
-<!-- Hyundai Aura -->
-<div class="col-md-4">
-  <a href="tel:+919052017979">
-    <div class="card">
-      <img src="img/aura.jpg" class="card-img-top" alt="Hyundai Aura">
-      <div class="card-body">
-        <h5 class="card-title">Hyundai Aura</h5>
-        <p class="card-text">24hrs - ₹2500, 12hrs - ₹1500</p>
-      </div>
-    </div>
-  </a>
-</div>
-
-<!-- Maruti Swift -->
-<div class="col-md-4">
-  <a href="tel:+919052017979">
-    <div class="card">
-      <img src="img/swift.jpg" class="card-img-top" alt="Maruti Swift">
-      <div class="card-body">
-        <h5 class="card-title">Maruti Swift</h5>
-        <p class="card-text">24hrs - ₹2200, 12hrs - ₹1200</p>
-      </div>
-    </div>
-  </a>
-</div>
 <!-- Toyota Fortuner -->
 <div class="col-md-4">
   <a href="tel:+919052017979">
@@ -238,6 +135,76 @@
             <!-- Add more cars (Car 6 to Car 12) similarly -->
         </div>
     </div>
+	<!-- Car Booking Section -->
+  <div class="car-booking">
+    <h1>Book Your Car</h1>
+
+    <!-- Car List will be injected here dynamically -->
+    <div id="carList" class="row">
+      <!-- Cars will be displayed here dynamically -->
+    </div>
+  </div>
+
+  <!-- Script for Car List and Booking via Phone -->
+  <script>
+    // Car details array (name, image, price for 12 and 24 hours)
+    const cars = [
+      {name: 'Swift', image: 'img/swift.jpg', price12hrs: 1200, price24hrs: 2000},
+      {name: 'Etios', image: 'img/etios.jpg', price12hrs: 1200, price24hrs: 2000},
+      {name: 'I10 Nios', image: 'img/i10nios.jpg', price12hrs: 1500, price24hrs: 2300},
+      {name: 'Swift Dzire', image: 'img/swiftdzire.jpg', price12hrs: 1500, price24hrs: 2300},
+      {name: 'Hyundai Aura', image: 'img/aura.jpg', price12hrs: 1500, price24hrs: 2500},
+      {name: 'Tata Punch', image: 'img/punch.jpg', price12hrs: 1500, price24hrs: 2500},
+      {name: 'Hyundai i20', image: 'img/i20.jpg', price12hrs: 1500, price24hrs: 2500},
+      {name: 'Renault Kiger', image: 'img/kiger.jpg', price12hrs: 1500, price24hrs: 2500},
+      {name: 'Urban Cruiser', image: 'img/urban-cruiser.jpg', price12hrs: 1500, price24hrs: 2500},
+      {name: 'Brezza', image: 'img/brezza.jpg', price12hrs: 1500, price24hrs: 2500},
+      {name: 'Nexa Fronx', image: 'img/fronx.jpg', price12hrs: 1500, price24hrs: 2500},
+      {name: 'Hyundai Creta', image: 'img/creta.jpg', price12hrs: 2000, price24hrs: 3000},
+      {name: 'Grand Vitara', image: 'img/grandvitara.jpg', price12hrs: 2000, price24hrs: 3000},
+      {name: 'Ertiga', image: 'img/ertiga.jpg', price12hrs: 2000, price24hrs: 3500},
+      {name: 'Bolero Neo', image: 'img/bolero-neo.jpg', price12hrs: 2000, price24hrs: 3500},
+      {name: 'Mahindra Thar', image: 'img/thar.jpg', price12hrs: 3500, price24hrs: 5000},
+      {name: 'Innova Crysta', image: 'img/innova.jpg', price12hrs: 3500, price24hrs: 5000},
+      {name: 'Brezza Sunroof', image: 'img/brezza-sunroof.jpg', price12hrs: 1500, price24hrs: 2500},
+      {name: 'Mahindra XUV700', image: 'img/xuv700.jpg', price24hrs: 6500, price12hrs: 4500 },
+      {name: 'Hyundai Venue', image: 'img/venue.jpg', price24hrs: 2500, price12hrs: 1500 },
+      {name: 'Tata Nexon Sunroof', image: 'img/nexon-sunroof.jpg', price24hrs: 2800, price12hrs: 1800 },
+      {name: 'Tata Altroz Sunroof', image: 'img/altroz-sunroof.jpg', price24hrs: 2500, price12hrs: 1600 },
+      {name: 'XUV 300 Sunroof', image: 'img/xuv300-sunroof.jpg', price24hrs: 2800, price12hrs: 1800 },
+      {name: 'Kia selto', image: 'img/kia-selto.jpg', price24hrs: 28,00, price12hrs: 18,00, withDriver: true },
+    ];
+
+    // Generate car booking cards dynamically
+    const carListElement = document.getElementById('carList');
+    cars.forEach(car => {
+      carListElement.innerHTML += `
+        <div class="col-md-4">
+          <div class="card mb-4">
+            <img src="${car.image}" class="card-img-top" alt="${car.name}">
+            <div class="card-body">
+              <h5 class="card-title">${car.name}</h5>
+              <p class="card-text">12hrs - ₹${car.price12hrs}</p>
+              <p class="card-text">24hrs - ₹${car.price24hrs}</p>
+              
+              <button class="btn btn-success mb-2" onclick="bookCar('${car.name}', 24, ${car.price24hrs})">Call to Book</button>
+            </div>
+          </div>
+        </div>
+      `;
+    });
+
+    // Function to handle car booking via telephone
+    function bookCar(carName, hours, price) {
+      const message = `I want to book the ${carName} for ${hours}hrs at ₹${price}.`;
+
+      // Replace with the phone number you want to dial
+      const phoneNumber = 'tel:+919052017979'; // Example phone number
+
+      // Open the phone dialer with the message (if supported by the browser)
+      window.location.href = `${phoneNumber}?body=${encodeURIComponent(message)}`;
+    }
+       </script>
 
     <!-- Bootstrap JS and dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>

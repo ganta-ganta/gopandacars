@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Go Panda cars Payment Options</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
     <style>
         .payment-option {
@@ -40,27 +40,61 @@
             padding-bottom: 10px;
             margin-bottom: 15px;
         }
+        .navbar-brand img {
+            height: 40px;
+        }
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            color: #FFF;
+        }
     </style>
 </head>
 <body>
-     <!-- Payment Instructions -->
-     <div class="alert alert-info mt-4">
-        <h5><i class="bi bi-info-circle"></i> Payment Instructions</h5>
-        <ol>
-            <li>👇👇Complete your payment using any of the Below methods👇👇</li>
-            <li>After payment, share the screenshot on WhatsApp: <a href="https://wa.me/919052017979" class="alert-link">9052017979</a></li>
-            <li>Your booking will be confirmed after payment verification</li>
-        </ol>
-    </div>
-</div>
-</div>
-</div>
-    
+    <!-- Header/Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="img/logo.pmg" alt="Go Panda Cars self drive cars">
+            </a>
+                    </div>
+    </nav>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/919966688266" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <div class="container py-5">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                
                 <h2 class="text-center mb-4">Payment Options</h2>
+                
+                <!-- Payment Instructions -->
+                <div class="alert alert-info mt-4">
+                    <h5><i class="bi bi-info-circle"></i> Payment Instructions</h5>
+                    <ol>
+                        <li>👇👇Complete your payment using any of the Below methods👇👇</li>
+                        <li>After payment, share the screenshot on WhatsApp: <a href="https://wa.me/919966688266" class="alert-link">Click here to chat</a></li>
+                        <li>Your booking will be confirmed after payment verification</li>
+                    </ol>
+                </div>
                 
                 <!-- UPI QR Code Payment -->
                 <div class="payment-option">
@@ -106,81 +140,60 @@
                         </button>
                     </div>
                 </div>
-                <!-- Add this modal at the bottom of your HTML (before closing </body>) -->
-<div class="modal fade" id="paymentModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header bg-primary text-white">
-        <h5 class="modal-title"><i class="bi bi-credit-card"></i> Complete Your Booking</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div class="alert alert-success">
-          <i class="bi bi-check-circle"></i> Your booking request has been sent via WhatsApp!
-        </div>
-        <p>Please pay ₹2000 advance to confirm your booking:</p>
-        
-        <!-- Razorpay Payment Button -->
-        <div class="border p-3 rounded bg-light mt-3">
-          <form>
-            <script src="https://checkout.razorpay.com/v1/payment-button.js" 
-                    data-payment_button_id="pl_QggW5UGmkGPc5V" 
-                    async>
-            </script>
-          </form>
-          <p class="small text-muted mt-2">
-            <i class="bi bi-lock-fill"></i> Secure payment processing
-          </p>
-        </div>
-        
-        <div class="alert alert-warning mt-3">
-          <i class="bi bi-info-circle"></i> Your booking will be confirmed only after payment.
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">I'll Pay Later</button>
-        <a href="https://wa.me/919052017979" class="btn btn-success">
-          <i class="bi bi-whatsapp"></i> Payment Help
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<script>
-// Modified bookCar function to show payment popup after WhatsApp
-function bookCar(carName, hours, price, imageUrl, description) {
-    // First open WhatsApp as before
-    const message = `I want to book the ${carName} for ${hours}hrs at ₹${price}.\n\n*Car Details:*\n${description}\n\n*Image:* ${imageUrl}\n\nPlease confirm availability.`;
-    const whatsappLink = `https://wa.me/919052017979?text=${encodeURIComponent(message)}`;
-    window.open(whatsappLink, '_blank');
-    
-    // Then show payment modal after a short delay (2 seconds)
-    setTimeout(() => {
-        const paymentModal = new bootstrap.Modal(document.getElementById('paymentModal'));
-        paymentModal.show();
-        
-        // Update modal content with booking details
-        document.querySelector('#paymentModal .modal-body p').innerHTML = 
-            `Please pay ₹2000 advance to confirm your <strong>${carName}</strong> booking (${hours}hrs):`;
-    }, 2000);
-}
-</script>
                 
-                <!-- Payment Instructions -->
-                <div class="alert alert-info mt-4">
-                    <h5><i class="bi bi-info-circle"></i> Payment Instructions</h5>
-                    <ol>
-                        <li>Complete your payment using any of the above methods</li>
-                        <li>After payment, share the screenshot on WhatsApp: <a href="https://wa.me/919052017979" class="alert-link">9966688266</a></li>
-                        <li>Your booking will be confirmed after payment verification</li>
-                    </ol>
+                <!-- Razorpay Payment Modal -->
+                <div class="modal fade" id="paymentModal" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header bg-primary text-white">
+                                <h5 class="modal-title"><i class="bi bi-credit-card"></i> Complete Your Booking</h5>
+                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="alert alert-success">
+                                    <i class="bi bi-check-circle"></i> Your booking request has been sent via WhatsApp!
+                                </div>
+                                <p>Please pay ₹2000 advance to confirm your booking:</p>
+                                
+                                <div class="border p-3 rounded bg-light mt-3">
+                                    <form>
+                                        <script src="https://checkout.razorpay.com/v1/payment-button.js" 
+                                                data-payment_button_id="pl_QggW5UGmkGPc5V" 
+                                                async>
+                                        </script>
+                                    </form>
+                                    <p class="small text-muted mt-2">
+                                        <i class="bi bi-lock-fill"></i> Secure payment processing
+                                    </p>
+                                </div>
+                                
+                                <div class="alert alert-warning mt-3">
+                                    <i class="bi bi-info-circle"></i> Your booking will be confirmed only after payment.
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">I'll Pay Later</button>
+                                <a href="https://wa.me/919966688266" class="btn btn-success">
+                                    <i class="bi bi-whatsapp"></i> Payment Help
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Additional Payment Instructions -->
+                <div class="alert alert-warning mt-4">
+                    <h5><i class="bi bi-exclamation-triangle"></i> Important</h5>
+                    <ul>
+                        <li>Please make payment only to the above official numbers/IDs</li>
+                        <li>For any payment issues, contact us immediately at <a href="tel:9966688266" class="alert-link">9966688266</a></li>
+                        <li>Bookings are confirmed only after payment receipt</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
-    <!-- WhatsApp Quick Contact -->
- 
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         function copyToClipboard(elementId, messageId) {
@@ -200,6 +213,24 @@ function bookCar(carName, hours, price, imageUrl, description) {
                 console.error('Failed to copy: ', err);
                 alert('Failed to copy text. Please try again.');
             });
+        }
+
+        // Modified bookCar function to show payment popup after WhatsApp
+        function bookCar(carName, hours, price, imageUrl, description) {
+            // First open WhatsApp as before
+            const message = `I want to book the ${carName} for ${hours}hrs at ₹${price}.\n\n*Car Details:*\n${description}\n\n*Image:* ${imageUrl}\n\nPlease confirm availability.`;
+            const whatsappLink = `https://wa.me/919966688266?text=${encodeURIComponent(message)}`;
+            window.open(whatsappLink, '_blank');
+            
+            // Then show payment modal after a short delay (2 seconds)
+            setTimeout(() => {
+                const paymentModal = new bootstrap.Modal(document.getElementById('paymentModal'));
+                paymentModal.show();
+                
+                // Update modal content with booking details
+                document.querySelector('#paymentModal .modal-body p').innerHTML = 
+                    `Please pay ₹2000 advance to confirm your <strong>${carName}</strong> booking (${hours}hrs):`;
+            }, 2000);
         }
     </script>
 </body>

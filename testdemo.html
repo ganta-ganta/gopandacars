@@ -217,7 +217,7 @@
   // Modified bookCar function to show payment popup after WhatsApp
   function bookCar(carName, hours, price, imageUrl, description) {
       // First open WhatsApp as before
-      const message = `I want to book the ${carName} for ${hours}hrs at ₹${price}.\n\n*Car Details:*\n${description}\n\n*Image:* https://gopandacars.in/${imageUrl}\n\n confirm availability.`;
+      const message = `I want to book the ${carName} for ${hours}hrs at ₹${price}.\n\n https://gopandacars.in/${imageUrl}\n\n confirm availability.`;
       const whatsappLink = `https://wa.me/919052017979?text=${encodeURIComponent(message)}`;
       window.open(whatsappLink, '_blank');
       

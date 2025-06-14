@@ -381,7 +381,7 @@ renderCars();
 
 // Function to handle car booking via WhatsApp
 function bookCar(carName, hours, price, imageUrl, description) {
-    const message = `I want to book the ${carName} for ${hours}hrs at ₹${price}.\n\n*Car Details:*\n${description}\n\n*Image:* ${imageUrl}\n\nPlease confirm availability.`;
+    const message = `I want to book the ${carName} for ${hours}hrs at ₹${price}.\nnhttps://gopandacars.in/${imageUrl}\n\n confirm availability.\n\n\n\n\n https://gopandacars.in/pay`;
     const whatsappLink = `https://wa.me/919052017979?text=${encodeURIComponent(message)}`;
     window.open(whatsappLink, '_blank');
 }

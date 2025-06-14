@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Options</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        .payment-option {
+            border: 1px solid #dee2e6;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: all 0.3s;
+        }
+        .payment-option:hover {
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        .copy-btn {
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .copy-btn:hover {
+            transform: scale(1.1);
+        }
+        .copied-message {
+            display: none;
+            color: green;
+            font-size: 0.8rem;
+        }
+        .qr-code {
+            max-width: 200px;
+            margin: 0 auto;
+            display: block;
+        }
+        .payment-header {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+     <!-- Payment Instructions -->
+     <div class="alert alert-info mt-4">
+        <h5><i class="bi bi-info-circle"></i> Payment Instructions</h5>
+        <ol>
+            <li>Complete your payment using any of the above methods</li>
+            <li>After payment, share the screenshot on WhatsApp: <a href="https://wa.me/919052017979" class="alert-link">9052017979</a></li>
+            <li>Your booking will be confirmed after payment verification</li>
+        </ol>
+    </div>
+</div>
+</div>
+</div>
+    
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                
+                <h2 class="text-center mb-4">Payment Options</h2>
+                
+                <!-- UPI QR Code Payment -->
+                <div class="payment-option">
+                    <div class="payment-header">
+                        <h4><i class="bi bi-qr-code"></i> Scan UPI QR Code</h4>
+                    </div>
+                    <div class="text-center">
+                        <img src="https://via.placeholder.com/200x200?text=UPI+QR+Code" alt="UPI QR Code" class="qr-code img-fluid mb-3">
+                        <p class="text-muted">Scan this code with any UPI app to pay</p>
+                    </div>
+                </div>
+                
+                <!-- UPI ID Payment -->
+                <div class="payment-option">
+                    <div class="payment-header">
+                        <h4><i class="bi bi-wallet2"></i> Pay via UPI ID</h4>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div>
+                            <strong>UPI ID:</strong> 
+                            <span id="upiId">gopandacars@ybl</span>
+                            <span id="upiCopied" class="copied-message ms-2">Copied!</span>
+                        </div>
+                        <button class="btn btn-sm btn-outline-primary copy-btn" onclick="copyToClipboard('upiId', 'upiCopied')">
+                            <i class="bi bi-clipboard"></i> Copy
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- PhonePe Payment -->
+                <div class="payment-option">
+                    <div class="payment-header">
+                        <h4><i class="bi bi-phone"></i> Pay via Phone Number</h4>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div>
+                            <strong>Phone Number:</strong> 
+                            <span id="phoneNumber">9052017979</span>
+                            <span id="phoneCopied" class="copied-message ms-2">Copied!</span>
+                        </div>
+                        <button class="btn btn-sm btn-outline-primary copy-btn" onclick="copyToClipboard('phoneNumber', 'phoneCopied')">
+                            <i class="bi bi-clipboard"></i> Copy
+                        </button>
+                    </div>
+                </div>
+                <!-- Add this modal at the bottom of your HTML (before closing </body>) -->
+<div class="modal fade" id="paymentModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-primary text-white">
+        <h5 class="modal-title"><i class="bi bi-credit-card"></i> Complete Your Booking</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="alert alert-success">
+          <i class="bi bi-check-circle"></i> Your booking request has been sent via WhatsApp!
+        </div>
+        <p>Please pay ₹2000 advance to confirm your booking:</p>
+        
+        <!-- Razorpay Payment Button -->
+        <div class="border p-3 rounded bg-light mt-3">
+          <form>
+            <script src="https://checkout.razorpay.com/v1/payment-button.js" 
+                    data-payment_button_id="pl_QggW5UGmkGPc5V" 
+                    async>
+            </script>
+          </form>
+          <p class="small text-muted mt-2">
+            <i class="bi bi-lock-fill"></i> Secure payment processing
+          </p>
+        </div>
+        
+        <div class="alert alert-warning mt-3">
+          <i class="bi bi-info-circle"></i> Your booking will be confirmed only after payment.
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">I'll Pay Later</button>
+        <a href="https://wa.me/919052017979" class="btn btn-success">
+          <i class="bi bi-whatsapp"></i> Payment Help
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// Modified bookCar function to show payment popup after WhatsApp
+function bookCar(carName, hours, price, imageUrl, description) {
+    // First open WhatsApp as before
+    const message = `I want to book the ${carName} for ${hours}hrs at ₹${price}.\n\n*Car Details:*\n${description}\n\n*Image:* ${imageUrl}\n\nPlease confirm availability.`;
+    const whatsappLink = `https://wa.me/919052017979?text=${encodeURIComponent(message)}`;
+    window.open(whatsappLink, '_blank');
+    
+    // Then show payment modal after a short delay (2 seconds)
+    setTimeout(() => {
+        const paymentModal = new bootstrap.Modal(document.getElementById('paymentModal'));
+        paymentModal.show();
+        
+        // Update modal content with booking details
+        document.querySelector('#paymentModal .modal-body p').innerHTML = 
+            `Please pay ₹2000 advance to confirm your <strong>${carName}</strong> booking (${hours}hrs):`;
+    }, 2000);
+}
+</script>
+                
+                <!-- Payment Instructions -->
+                <div class="alert alert-info mt-4">
+                    <h5><i class="bi bi-info-circle"></i> Payment Instructions</h5>
+                    <ol>
+                        <li>Complete your payment using any of the above methods</li>
+                        <li>After payment, share the screenshot on WhatsApp: <a href="https://wa.me/919052017979" class="alert-link">9052017979</a></li>
+                        <li>Your booking will be confirmed after payment verification</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- WhatsApp Quick Contact -->
+ 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function copyToClipboard(elementId, messageId) {
+            const element = document.getElementById(elementId);
+            const text = element.innerText;
+            
+            navigator.clipboard.writeText(text).then(() => {
+                // Show copied message
+                const message = document.getElementById(messageId);
+                message.style.display = 'inline';
+                
+                // Hide after 2 seconds
+                setTimeout(() => {
+                    message.style.display = 'none';
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+                alert('Failed to copy text. Please try again.');
+            });
+        }
+    </script>
+</body>
+</html>

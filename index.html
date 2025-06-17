@@ -166,7 +166,8 @@
         .advance-payment-btn:hover {
             background-color: #45a049;
         }
-		.whatsapp-float {
+	/* WhatsApp Floating Button */
+        .whatsapp-float {
             position: fixed;
             width: 60px;
             height: 60px;
@@ -182,10 +183,44 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            transition: all 0.4s;
+            text-decoration: none;
         }
+
         .whatsapp-float:hover {
             background-color: #128C7E;
-            color: #FFF;
+            transform: scale(1.05);
+        }
+
+        /* Tooltip Text on Hover */
+        .whatsapp-float::after {
+            content: "Chat Now";
+            position: absolute;
+            right: 70px;
+            background: #333;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 14px;
+            opacity: 0;
+            transition: all 0.4s;
+            pointer-events: none;
+        }
+
+        .whatsapp-float:hover::after {
+            opacity: 1;
+            right: 75px;
+        }
+
+        /* Pulse Animation (Optional) */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .whatsapp-float.pulse {
+            animation: pulse 2s infinite;
         }
     </style>
 
@@ -359,9 +394,10 @@
     </div>
   </div>
 	  <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/+919052017979" class="whatsapp-float" target="_blank">
+    <a href="https://wa.me/1234567890" class="whatsapp-float pulse" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
+
   
   <script>
   // Modified bookCar function to show payment popup after WhatsApp

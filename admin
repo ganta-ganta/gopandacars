@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Embedded Google Sheet</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    iframe {
+      width: 100%;
+      max-width: 1000px;
+      height: 80vh;
+      border: none;
+    }
+
+    .home-button {
+      margin-top: 20px;
+      text-decoration: none;
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .home-button:hover {
+      background-color: #0056b3;
+    }
+
+    @media (max-width: 768px) {
+      iframe {
+        height: 70vh;
+      }
+    }
+
+    @media (max-width: 480px) {
+      iframe {
+        height: 60vh;
+      }
+
+      .home-button {
+        font-size: 14px;
+        padding: 8px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>View Spreadsheet</h1>
+
+  <iframe src="https://docs.google.com/spreadsheets/d/1xRUR95ya2uyuMuvtEjpPjkW7QB6T0WIWUIgxzovohcA/edit?usp=sharing"></iframe>
+
+  <a class="home-button" href="index.html">🏠 Home</a>
+
+</body>
+</html>
